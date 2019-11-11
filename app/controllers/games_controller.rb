@@ -9,13 +9,11 @@ class GamesController < ApplicationController
 
   def check_grid(word)
     @word = word.split(//)
-    @letters.each_with_index { |letter, index|
-      if @word.include?(letter)
-        @letters.delete_at(index)
-        return true
-      else
-        return false
-      end
+    @word.each { |letter|
+      next if @letters.include?(letter)
+
+      return false
+
     }
   end
 
