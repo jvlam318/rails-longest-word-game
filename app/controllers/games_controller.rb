@@ -13,7 +13,6 @@ class GamesController < ApplicationController
       next if @letters.include?(letter)
 
       return false
-
     }
   end
 
